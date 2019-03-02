@@ -108,17 +108,67 @@
   </entry>
   
   <entry>
+    <title>Vue.js学习实战</title>
+    <link href="http://scope.pub/2018/05/10/learnVue/"/>
+    <id>http://scope.pub/2018/05/10/learnVue/</id>
+    <published>2018-05-10T12:54:59.000Z</published>
+    <updated>2019-03-02T10:02:14.685Z</updated>
+    
+    <summary type="html">
+    
+      学习Vue框架
+    
+    </summary>
+    
+      <category term="编程" scheme="http://scope.pub/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Vue" scheme="http://scope.pub/tags/Vue/"/>
+    
+      <category term="JavaScript" scheme="http://scope.pub/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ONOS容器集群环境搭建</title>
+    <link href="http://scope.pub/2018/05/04/onos-cluster/"/>
+    <id>http://scope.pub/2018/05/04/onos-cluster/</id>
+    <published>2018-05-04T11:47:59.000Z</published>
+    <updated>2019-03-02T09:52:28.774Z</updated>
+    
+    <summary type="html">
+    
+      通过docker搭建ONOS集群环境
+    
+    </summary>
+    
+      <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="ONOS" scheme="http://scope.pub/tags/ONOS/"/>
+    
+      <category term="Docker" scheme="http://scope.pub/tags/Docker/"/>
+    
+      <category term="Mininet" scheme="http://scope.pub/tags/Mininet/"/>
+    
+      <category term="portainer" scheme="http://scope.pub/tags/portainer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Edge浏览器扩展插件</title>
     <link href="http://scope.pub/2017/02/20/EdgeExtension/"/>
     <id>http://scope.pub/2017/02/20/EdgeExtension/</id>
     <published>2017-02-20T11:08:15.000Z</published>
-    <updated>2019-03-02T09:19:08.784Z</updated>
+    <updated>2019-03-02T09:53:20.156Z</updated>
     
     <summary type="html">
     
       第一次测试的相关笔记
     
     </summary>
+    
+      <category term="编程" scheme="http://scope.pub/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
       <category term="Edge" scheme="http://scope.pub/tags/Edge/"/>
@@ -132,13 +182,15 @@
     <link href="http://scope.pub/2017/02/15/SDN_NV/"/>
     <id>http://scope.pub/2017/02/15/SDN_NV/</id>
     <published>2017-02-15T13:47:59.000Z</published>
-    <updated>2019-03-02T09:19:08.797Z</updated>
+    <updated>2019-03-02T09:52:21.058Z</updated>
     
     <summary type="html">
     
       关于SDN网络虚拟化的一些资料的整理
     
     </summary>
+    
+      <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
       <category term="SDN" scheme="http://scope.pub/tags/SDN/"/>
@@ -154,13 +206,15 @@
     <link href="http://scope.pub/2017/01/08/edgeOfFuture/"/>
     <id>http://scope.pub/2017/01/08/edgeOfFuture/</id>
     <published>2017-01-08T09:45:17.000Z</published>
-    <updated>2019-03-02T09:19:08.811Z</updated>
+    <updated>2019-03-02T09:53:08.237Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;《未来边缘》是刘慈欣的一本科幻小说集其中包含：天使时代、命运、2018年4月1日、赡养上帝与微纪元五篇短片科幻小说。给我了五次神奇的思维旅行。&lt;/p&gt;
     
     </summary>
+    
+      <category term="读后感" scheme="http://scope.pub/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
     
       <category term="Science Fiction" scheme="http://scope.pub/tags/Science-Fiction/"/>
@@ -174,13 +228,15 @@
     <link href="http://scope.pub/2017/01/07/testHexo/"/>
     <id>http://scope.pub/2017/01/07/testHexo/</id>
     <published>2017-01-07T11:47:59.000Z</published>
-    <updated>2019-03-02T09:19:08.840Z</updated>
+    <updated>2019-03-02T09:51:58.983Z</updated>
     
     <summary type="html">
     
       第一次测试的相关笔记
     
     </summary>
+    
+      <category term="搭建平台" scheme="http://scope.pub/categories/%E6%90%AD%E5%BB%BA%E5%B9%B3%E5%8F%B0/"/>
     
     
       <category term="Github" scheme="http://scope.pub/tags/Github/"/>

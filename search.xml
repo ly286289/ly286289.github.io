@@ -47,9 +47,38 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Vue.js学习实战]]></title>
+    <url>%2F2018%2F05%2F10%2FlearnVue%2F</url>
+    <content type="text"><![CDATA[前言学习Vue.js框架。 vue安装与初始化工程安装yarn1npm install -g yarn 安装vue与vue-cli12yarn add vueyarn add vue-cli 创建工程，之后输入工程名称、工程描述、作者等信息1vue init webpack vueproject 进入工程，安装运行工程，之后可在8080端口查看工程12npm installnpm run dev 说明 格式 例子 文本 1输出html代码|v-html|```&lt;div v-html=&quot;message&quot;&gt;&lt;/div&gt; 属性值|v-bind 缩写:|v-bind:class1JS表达式|```&#123;&#123;&#125;&#125;```|```&#123;&#123;5+5&#125;&#125; 判断指令|v-if|v-if1监听指令|v-on 缩写@|```&lt;button v-on=&quot;doSonething&quot;&gt;&lt;/buton&gt; 数据绑定|v-model|]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ONOS容器集群环境搭建]]></title>
+    <url>%2F2018%2F05%2F04%2Fonos-cluster%2F</url>
+    <content type="text"><![CDATA[前言对github pages的第一次实验，静态的网页生成使用hexo。本篇包括对github使用的一些笔记以及OpenSuse的一些笔记。 搭建docker可视化管理平台本可视化平台采用portainer，拉取平台docker镜像：1docker pull portainer/portainer 创建容器，并将容器的9000端口暴漏出来：12345docker run -d -p 9000:9000 \ --restart=always \ -v /var/run/docker.sock:/var/run/docker.sock \ --name prtainer-test \ portainer/portainer 搭建onos集群拉取onos镜像：1docker pull onosproject/onos 根据镜像创建三个onos容器：123docker run -d -p 8181:8181 --restart=always --name onos-a onosproject/onosdocker run -d -p 8181:8182 --restart=always --name onos-b onosproject/onosdocker run -d -p 8181:8183 --restart=always --name onos-c onosproject/onos 创建拓扑并连接到控制器通过portainer界面查看容器IP，界面URP为“主机IP:9000”，得到三个容器IP为172.17.0.3、172.17.0.6、172.17.0.7通过mininet创建拓扑，并更改三个交换机所连接的控制器1234mn --topo=linear,3 --controller=remote,ip=127.0.0.1ovs-vsctl set-controller s1 tcp:172.17.0.3:6653ovs-vsctl set-controller s1 tcp:172.17.0.6:6653ovs-vsctl set-controller s1 tcp:172.17.0.7:6653 通过8181、8182、8183端口访问三个控制web界面，将openflow的APP激活，控制器便可以控制交换机 创建控制器集群通过onos-form-cluster脚本生成JSON代码下发到北向REST接口中1/opt/onos/bin/onos-form-cluster 172.17.0.3 172.17.0.6 172.17.0.7 之后可通过8181、8182、8183查看集群控制状态。 搭建完成后可通过portainer管理界面暂停ONOS容器与恢复ONOS容器查看控制器抗毁状态]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>ONOS</tag>
+        <tag>Docker</tag>
+        <tag>Mininet</tag>
+        <tag>portainer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Edge浏览器扩展插件]]></title>
     <url>%2F2017%2F02%2F20%2FEdgeExtension%2F</url>
     <content type="text"><![CDATA[前言Edge浏览器添加插件方法总结,本想在Edge上添加Chrome插件实现视频播放悬浮，方便看视频时浏览其他网页，但发现Chrome上也没有什么好插件。Video Tap等插件经过转换桥接后在Edge上均不能实现正常功能。在搜索后发现Tempermonkeyd运行的js脚本中有实现此功能的多种插件：pop flash,flash viewer等。 Chrome插件转Edge插件在Windows商店下载Microsoft Edge ExtensionToolkit工具可将Chrome插件转为Edge支持插件（点此前往Windows应用商店下载）。 将需要转换的Chrome插件下载到本地，由于为crx后缀，需要手动更改为zip后缀解压，这样转换工具才可以读取插件源文件。工具解析插件后一般会出现 chrome-extension协议需要替换和manifest.json中资源列表格式不正确两类错误。 chrome-extension错误只需要将其替换为ms-browser-extension便可修改；manifest.json格式错误需要根据官方格式（https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/extensions/api-support/supported-manifest-keys/json-manifest-example/）进行修改。大多数需要修改如下内容： 1) author字段不能为空 2) default_icon字段的{ENTRT_SIZE}需要为一个确定值例如36，40 3) background缺少参数persistent 修改完成错误后，工具便会自动生成ChromeAPI的桥接(backgroundScriptsAPIBridge.Js，contentScriptsAPIBridge.js等)文件。这样便可在Edge浏览器中添加插件。 参考自Chrome扩展移植到Edge浏览器教程 经过实践，包括VideoTape、惠惠购物助手等插件虽然能够成功转换，但使用效果不佳或者可以加载但没有任何作用。 Edge自定义插件安装首先浏览器地址栏输入 about:flags ，进入开发者设置页，启用开发扩展功能。 然后扩展管理页就会新增一个按钮，点击加载扩展然后选择扩展的文件夹即可。 Edge的Tampermonkey插件Tampermonkey可以加载JS插件作为脚本，可以在Windows商店进行下载该扩展。 Tampermonkey可在https://greasyfork.org/zh-CN/scripts网站中查找JS脚本添加新功能，或者新建脚本自己实现功能。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
       <tags>
         <tag>Edge</tag>
         <tag>Extension</tag>
@@ -59,6 +88,9 @@
     <title><![CDATA[SDN网络虚拟化]]></title>
     <url>%2F2017%2F02%2F15%2FSDN_NV%2F</url>
     <content type="text"><![CDATA[前言对SDN网络虚拟化技术的一些整理。包括目前流行的OpenVirteX和OpenDaylight上的VTN模块的简介。 传统的网络虚拟化技术，如VLAN和VPN，设备运行着各自的转发逻辑，对这样的网络进行虚拟化需要分别对每一台设备进行操作，再加上不同厂商的设备具有不同的硬件架构和软件逻辑，因此网络虚拟化的配置和操作通常是非常复杂的。另外由于自动化的缺失，当虚拟网络发生变化时，更改原来的配置工作量将十分巨大，因此并不适合构建网络虚拟化平台。 SDN的集中控制和可编程能力则恰好解决了上述问题，即可以在集中式架构的合适位置引入“转换单元”，按照一定的策略实现虚拟逻辑资源与真实物理资源间的映射。这种映射可以非常灵活，虚拟逻辑资源可能是物理资源的一个子集，也可能是完全解耦于物理资源的。当虚拟网络发生变化时，“转换单元”还可以自动调整映射的策略。通过SDN这种集中式可编程特性实现自动化，可以简化传统网络虚拟化场景中复杂的配置工作，使网络虚拟化技术能够更具灵活性和弹性。 在基于SDN的网络虚拟化平台中，“转换单元”可以工作在不同的位置上，从而带来不同的性能特征，主要可以分为以下3类，分别与计算虚拟化的BareMetal、HyperVisor、OSContainer这3类技术相对应。 1) 转换单元集成于交换机中。每个物理交换机运行多个虚拟交换机实例，每个实例连接一个控制器，转换单元根据虚拟网络的映射信息把流量交付给相应的控制器进行处理。在这种思路下，虚拟化直接在转发设备上进行，可类比于计算虚拟化中的BareMetal方式。ONF在OF-CONFIG的白皮书中提及了这种情况，即一个物理的OF-CapableSwitch中可以有多个OF-LogicalSwitch。 2) 转换单元作为一个独立的外置设备，工作在物理交换机和各虚拟网络的控制器之间。在这种情况下，转换单元根据虚拟网络的映射信息，对物理交换机和控制器之间交互的信令进行转换，将控制信令交付给正确的控制器和物理交换机处理。在这种模式下可以将“转换单元”看作物理交换机和控制器间的透明代理。这种思路可以类比于计算虚拟化中的HyperVisor方式，其代表技术有FlowVisor、VERTIGO和OpenVirtex等。 3) 转换单元位于控制器中，作为控制器中一个特殊的APP。这种模式下，虚拟网络的用户共同接受一个控制器的调度，不同的虚拟网络可以运行不同的APP。这种思路类比于计算虚拟化中的Container方式，FlowN是基于该思路进行设计的，OpenDayLight通过VTN组件实现了网络虚拟化，NVP也是基于这种方式实现数据中心中多租户的隔离。 OpenVirteX简介OVX被分为如下几个主要部分： 面向网络的南向接口：用于建立和维持基础设施（PhysicalNetwork），管理OVX和数据路径（datapath）之间的OpenFlow信道。 面对租户的北向接口：呈现由软件交换机（OVXSwitches）和虚拟链路（OVXLinks）构成的虚拟网络中的每个租户，管理OVXSwitches和租户控制器之间的OpenFlow信道。 全局映射Globalmap（OVXMap，PhysicalPort.ovxPortMap）：完成虚拟网络和物理网络之间的相互映射，并且连接这两个网络。 API server：监听JSONRPC调用系统配置和系统/网络状态信息。 Globalmapping在创建OVXNetwork时完成，虚拟网络和物理网络的信道管理在分离的IO循环中完成。对于每个消息，循环会做如下处理：1）有一个源或目的OVXNetwork；2）必须穿过北向南向分界，也就是必须调用virtualize()和devirtualize()方法。OVX南北向接口的这种默认解耦状态使在运行时期动态重配置OVXNetwork成为了可能，可通过API调用来操纵全局映射，并且允许OVX保留到网络的连接即使在租户不存在的情况下。 OVX不仅拥有底层物理网络拓扑，而且还有每个租户的虚拟网络拓扑。底层的物理网络拓扑是通过OVX下发LLDP报文获取到的，而上层的虚拟网络拓扑则是由OVX生成的。即租户的控制器下发的LLDP报文不会直接送到底层物理网络，而是在OVX上通过查询底层物理拓扑，从而模拟了LLDP的过程，向上提供网络拓扑。 OVX通过映射算法，解耦了底层网络和租户网络。即南向上，OVX作为控制器，接收底层物理设备的信息，并下发流表等报文到底层设备。北向上，OVX作为交换机集合，向租户的控制器发送OF报文。从而将一条完整的控制通路，变成了两段相互独立的控制通路。而这两者之间的映射关系，保存在GlobalMap中。在下图中，蓝色部分是面向租户的，而橙色部分是面向交换机的。两者之间互不可见，即租户看不到物理的交换机数据。而绿色部分是两者结合的纽带，保存了网络映射的数据。在数据上行、下行的过程中通过查表修改的方式，翻译成正确的数据。如下图右侧所示，上行数据需要调用virtualize()函数，而下行数据需要调用devirtualize()函数。 VTN简介VTN是SDN控制器中用于提供多租户虚拟网络的一项应用。通常，为每个部门的系统配置网络需要耗费大量的人力、物力，同样，需要为每个租户安装各种网络应用，并且很难共享这些资源，因此，设计、部署、管理整个复杂的网络是一项繁重的任务。为了解决这一难题，OpenDaylight提出在控制器中使用VTN，VTN的独特之处在于逻辑抽象平台。VTN将逻辑层面与物理层面完全分离，用户可以设计、利用任何所需网络，并且无需了解物理网络的拓扑结构和带宽限制。 VTN允许用户根据对L2/L3层网络的感知来定义网络。由此可知，基于VTN设计的网络会自动被映射到底层物理设备，并配置到支持SDN控制协议的独立的交换机上。这样不仅屏蔽了底层网络的复杂性而且可以更好的管理网络资源，减少了网络服务的配置时间和配置错误。 从VTN架构图我们可以看出，VTN共分为两个模块：VTN Manager和VTNCoordinator。VTN通过映射机制将虚拟网络资源（比如port，bridge，route）映射到物理资源上，包在租户内转发其实是在物理资源上进行转发，隔离机制是利用OpenFlow协议，转发时通过在支持OpenFlow的交换机上通过流表判断包的转发。 Manager位于controller内部，相当于控制器的一个plugin。它提供了REST接口对其进行增删改查。它还提供了对Openstackl2的网络api。以下是VTN Manager和VTN Coordinator的关系图。VTNCoordinator通过ODC Driver与控制器中的VTNManager还有拓扑模块，交换机管理模块相连。 VTN Coordinator通过北向接口与控制器相连接。其本身也提供REST API。一个Coordinator可以控制多个Controller。Coordinator通过刚开始静态下发配置，而不是在Manager收包后上交给Coordinator做收包决策。 VTN采用三种映射： 1) 端口映射：将物理交换机端口（三元组：交换机ID，端口ID，VLAN ID）映射到vBridge的端口。两者是一对一的关系。 2) VLAN映射：将物理交换机（二元组：交换机ID，VLAN ID或一元组：仅VLAN ID）映射到vBridge。多个VLAN ID可以map到一个vBridge，但是一个VLAN ID不能同时map到多个vBridge。Port类型为internel的无法被map。注意vlan是映射到vBridge，而不是vBridge的interface，但是实际在操作过程中，vBridge会起虚拟port对应相应的interface，该虚拟port作用相当于interface。 3) MAC 映射：将主机的MAC地址映射到vBridge的一个端口。（Helium版本仅在manager中支持，Lithium版本将会在coordinator中支持）该映射可以用于虚机迁移，也可以允许或禁止某些主机的通信。]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
       <tags>
         <tag>SDN</tag>
         <tag>OpenVirteX</tag>
@@ -69,6 +101,9 @@
     <title><![CDATA[《未来边缘》记]]></title>
     <url>%2F2017%2F01%2F08%2FedgeOfFuture%2F</url>
     <content type="text"><![CDATA[《未来边缘》是刘慈欣的一本科幻小说集其中包含：天使时代、命运、2018年4月1日、赡养上帝与微纪元五篇短片科幻小说。给我了五次神奇的思维旅行。 天使时代大刘通过将基因工程与软件工程进行类比、碱基对与二进制进行对比。脑洞大开，在小说中将编码产生基因与生命得以实现。由于此方法的发现者来自贫穷的非洲国家，作为一个热爱国家与民族的诺贝尔获得者，开始改写非洲孩子的基因。为了让非洲人民免于饥饿，让这些孩子可以像羊一样吃草跟树叶来获取能量。但不幸的是来自欧美国家的人们认为这是反人性的。于是通过联合国、通过武装力量向这个贫穷的非洲国家宣战，来迫使他们交出这些不再正常的孩子们。当战火洒向这个落后国家时，国家的武装迅速被解除了。留下只有交出孩子这一条路。但等到接收看押所有孩子时，发现另外的两万孩子是带着武器来的。这些武装的孩子们有着鸟一样的翅膀，像天使一样向美国航母战斗群发起了进攻。进攻的突然性与攻击方式的另类使得他们赢得了这场战斗，击沉了航母。 整个故事正如小说中这位诺贝尔获得者所说的：即使所谓的文明世界，只要有需要，伦理是第二位的。那些人们当然不需要吃野草和树叶，但他们肯定是需要飞翔，这是人类最古老的梦幻，没人能抵挡它的诱惑。 命运讲述了一艘飞船误入了时间蛀洞，发现一颗小行星正向地球俯冲而来，为了保护地球这艘飞船将一颗发动机砸向小行星，使小行星偏离了轨道。当他们正享受英雄的快乐时，发现时间蛀洞将他们带到的是白垩纪，这颗小行星很有可能是灭绝恐龙的那颗。怀着忐忑的心，他们又反穿回时间蛀洞，降落到地球上，发现地球早已经被恐龙所统治，恐龙发展出了自己的科技，而人类成为了恐龙的食物与动物园里的野兽。可笑的是他们还作为拯救恐龙的英雄而被恐龙所供奉。 这篇文章感觉与《最璀璨的银河》中的《诗云》似乎有承接关系，因为诗云也是将人类作为恐龙的食物，而且也是在太阳系，不过好像《诗云》中的恐龙貌似是外星人。《最璀璨的银河》中的《白垩纪往事》也属于恐龙这一题材的文章。 2018年4月1日这篇文章比较简单，主要介绍了基延、冬眠与虚拟王国这三个科幻概念和他们对一个普通人生活的影响，是对新技术的一种思考。其中基延是指通过改变人类的死亡基因使得人类寿命大大延长的生物技术，而冬眠是指使人类通过类似冬眠的方式来达到“时间旅行”的技术，虚拟王国是通过互联网等虚拟技术高度发展后，技术人员寻求获得与真实国家类似的政治权利而产生的与真实国家想对应的虚拟国家。于是就有了文中一对情侣的短暂故事，男方通过窃取公司资金希望获得基延，但又留念女友，而女方希望通过冬眠来逃避现实的残酷。最终双方的脆弱感情被现实所撕裂。 前两个生物技术使得人类思想发生了很大的变化。基延使得有钱人获得更长的寿命，普通人不仅在生活上开始与富人拉开差距，在生命面前也开始变得不再平等，这也就造成社会矛盾的增大，同样也就促使虚拟王国的产生。由于未来技术更加廉价、更加发达，因此通过冬眠获得“时间旅行”的人也更多。基延的高价格促成虚拟国家的诞生，由于虚拟国家主要由技术人员产生，他们权利低工资少，但社会正是由千千万万的技术人员在不同却重要的岗位所支撑的，于是他们试图通过虚拟国家来实现虚拟货币的人人均富，来改变现实社会的贫富矛盾。文章随小，但反应的社会与人类显示却并不简单。 赡养上帝一天地球上突然出现了许多的飞船，这些飞船上来的都是一些白头发白胡须的老人。这些老人声称是人类的上帝，是人类的创造者。人类陷入了有史以来的兴奋中，上帝提出希望通过为人类提供技术来换取人类对他们这些老人的赡养。于是每个家庭分配了一个上帝功人类赡养。但当人类发现上帝的技术太过发达而难以应用，随着时间的变迁，人类早已忘掉上帝来时的兴奋与创造自己的感恩，只有对抚养一个无所事事且寿命长久的老人的愤懑。上帝开始遭到人类整体的嫌弃。最终上帝开始遭到漫骂与家庭暴力。上帝开始出走，开始回到他们的飞船上，开始漫无目的再次旅行。在与上帝相处的日子里，人类了解到了人类文明也像一个人一样有童年、青年、中年与老年，而上帝就是一个老年文明，地球则是一个童年文明。每个文明都会去播种文明，希望在成为老年文明时，这个播种文明会赡养自己。同时告诉地球他们播种了四个地球，其中一个地球被另外一个地球吞并，而这个地球为了获得上帝的技术不仅没有赡养上帝，反而囚禁了上帝。另外一个地球自然消亡了。同时预示着地球可能会面临这个科技发达的地球哥哥的威胁与吞并。 与其说本文是对文明周期的一个思考，不如说是对人性对于老人态度的一个思考。但感觉这个思考是偏左了一些，也许是赡养的方法不对。 这篇文章是与《最璀璨的银河》中的《赡养人类》是同一个系列的。《赡养人类》中应该就是这个地球哥哥。而这个地球哥哥却面临着另外的一个人性故事。 微纪元微纪元描写了一个在太阳烧尽后人类的生存模式，一个只有灰尘大小的人类的生存方式。人类只需要生活在直径一米的球状世界里来躲避各种灾难。灰尘大小的人类也就意味着地球上有无限的能源供之使用，也即不会再有能源危机、环境危机等等问题。而最为这么小的人类也不再怕任何宏观世界的自然灾害的威胁，因为他们太小了这些灾害很难破坏他们。在大刘的心中这是一个欢乐的世界，不知道悲伤的世界，一个完美的世界。这篇文章评价很高，但我并没有感觉到，也许是篇幅在本文中比较长，给人留下的印象比较深刻罢了。]]></content>
+      <categories>
+        <category>读后感</category>
+      </categories>
       <tags>
         <tag>Science Fiction</tag>
         <tag>Book Review</tag>
@@ -78,6 +113,9 @@
     <title><![CDATA[Github Pages搭建相关笔记]]></title>
     <url>%2F2017%2F01%2F07%2FtestHexo%2F</url>
     <content type="text"><![CDATA[前言对github pages的第一次实验，静态的网页生成使用hexo。本篇包括对github使用的一些笔记以及OpenSuse的一些笔记。 docx转markdown使用pandoc工具：1pandoc -s example30.docx -t markdown -o example35.md 自己写了一个自动生成hexo可使用md文件的脚本：1234hexo new &quot;$1&quot;pandoc -s /home/ly/word/$1.docx -t markdown -o /home/ly/github/hexo/source/_posts/$1_doc.mdcat /home/ly/github/hexo/source/_posts/$1_doc.md &gt;&gt; /home/ly/github/hexo/source/_posts/$1.mdrm -f /home/ly/github/hexo/source/_posts/$1_doc.md 搭建github pages参考文章搭建方法1搭建方法2不蒜子统计计数markdown语法 OpenSuse安装scrapy确定python与pip版本为python2.7安装python-devel与libxml2-devel1pip install scrapy github上传文件1234git remote add origin https://github.com/ly286289/ly286289.github.io.gitgit add Readme.mdgit commit -m "first commit"git push origin master git产生的SSH密钥权限：123chmod 755 ~/.ssh/ chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub chmod 644 ~/.ssh/known_hosts 杂项Linux查看硬件配置：1dmidecode | more Linux中文安装，bash错误提示英文显示：在.bashrc中添加LC_MESSAGES=”en_US.UTF-8”]]></content>
+      <categories>
+        <category>搭建平台</category>
+      </categories>
       <tags>
         <tag>Github</tag>
         <tag>OpenSuse</tag>
