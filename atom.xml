@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cleanse Blog</title>
+  
+  <subtitle>浥清尘博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://scope.pub/"/>
+  <updated>2019-02-26T13:43:47.107Z</updated>
+  <id>http://scope.pub/</id>
+  
+  <author>
+    <name>Yang Lou</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://scope.pub/2019/02/25/hello-world/"/>
+    <id>http://scope.pub/2019/02/25/hello-world/</id>
+    <published>2019-02-25T14:14:31.000Z</published>
+    <updated>2019-02-26T13:43:47.107Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="test" scheme="http://scope.pub/categories/test/"/>
+    
+    
+      <category term="test" scheme="http://scope.pub/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot笔记</title>
+    <link href="http://scope.pub/2019/01/23/Springboot/"/>
+    <id>http://scope.pub/2019/01/23/Springboot/</id>
+    <published>2019-01-23T14:14:31.000Z</published>
+    <updated>2019-02-26T13:41:24.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Springboot&quot;&gt;&lt;a href=&quot;#Springboot&quot; class=&quot;headerlink&quot; title=&quot;Springboot&quot;&gt;&lt;/a&gt;Springboot&lt;/h1&gt;&lt;h2 id=&quot;JAP的使用方式&quot;&gt;&lt;a href=&quot;#JAP的使用方式&quot; class=&quot;headerlink&quot; title=&quot;JAP的使用方式&quot;&gt;&lt;/a&gt;JAP的使用方式&lt;/h2&gt;&lt;h3 id=&quot;1-配置文件&quot;&gt;&lt;a href=&quot;#1-配置文件&quot; class=&quot;headerlink&quot; title=&quot;1 配置文件&quot;&gt;&lt;/a&gt;1 配置文件&lt;/h3&gt;&lt;p&gt;在.properies中填写JPA连接MySql的配置：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;spring.datasource.url=jdbc:mysql://192.168.0.120:3306/blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.datasource.username=jing&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.datasource.password=***&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.jpa.show-sql=true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;spring.jpa.hibernate.ddl-auto=create&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;前面为连接数据mysql的配置，后面为JPA的配置。与此同时需要在MAVEN配置文件中添加依赖：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://scope.pub/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Springboot" scheme="http://scope.pub/tags/Springboot/"/>
+    
+      <category term="JAVA" scheme="http://scope.pub/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty源代码解析</title>
+    <link href="http://scope.pub/2019/01/15/Netty%E6%BA%90%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    <id>http://scope.pub/2019/01/15/Netty源代码解析/</id>
+    <published>2019-01-15T14:14:31.000Z</published>
+    <updated>2019-02-26T13:37:42.112Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Netty源代码解析&quot;&gt;&lt;a href=&quot;#Netty源代码解析&quot; class=&quot;headerlink&quot; title=&quot;Netty源代码解析&quot;&gt;&lt;/a&gt;Netty源代码解析&lt;/h1&gt;&lt;h2 id=&quot;bind操作&quot;&gt;&lt;a href=&quot;#bind操作&quot; class=&quot;headerlink&quot; title=&quot;bind操作&quot;&gt;&lt;/a&gt;bind操作&lt;/h2&gt;&lt;p&gt;Netty-4.1.8的NIO代码进入从bind事件开始：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;serverBootstrap.bind(&lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="源码刨析" scheme="http://scope.pub/categories/%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/"/>
+    
+    
+      <category term="Netty" scheme="http://scope.pub/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIO与Netty介绍</title>
+    <link href="http://scope.pub/2019/01/13/NIO%E4%B8%8ENetty/"/>
+    <id>http://scope.pub/2019/01/13/NIO与Netty/</id>
+    <published>2019-01-13T14:14:31.000Z</published>
+    <updated>2019-02-26T13:37:49.897Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;NIO与Netty介绍&quot;&gt;&lt;a href=&quot;#NIO与Netty介绍&quot; class=&quot;headerlink&quot; title=&quot;NIO与Netty介绍&quot;&gt;&lt;/a&gt;NIO与Netty介绍&lt;/h1&gt;&lt;h2 id=&quot;NIO发展史&quot;&gt;&lt;a href=&quot;#NIO发展史&quot; class=&quot;headerlink&quot; title=&quot;NIO发展史&quot;&gt;&lt;/a&gt;NIO发展史&lt;/h2&gt;&lt;p&gt;在网络TCP的IO连接中服务端通过bind监听端口，accept接收连接，之后进行read/write操作。在bind与accept过程中是否一直等待称为阻塞/非阻塞，在read/write过程中是否需要等待数据从内核拷贝到用户态的过程称为同步/异步。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://scope.pub/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="NIO" scheme="http://scope.pub/tags/NIO/"/>
+    
+      <category term="Netty" scheme="http://scope.pub/tags/Netty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MPLS机制</title>
+    <link href="http://scope.pub/2019/01/10/MPLS/"/>
+    <id>http://scope.pub/2019/01/10/MPLS/</id>
+    <published>2019-01-10T14:14:31.000Z</published>
+    <updated>2019-02-26T13:37:10.978Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;MPLS&quot;&gt;&lt;a href=&quot;#MPLS&quot; class=&quot;headerlink&quot; title=&quot;MPLS&quot;&gt;&lt;/a&gt;MPLS&lt;/h1&gt;&lt;p&gt;MPLS是一种转发等价类技术。入边界节点push标签，中间节点switch标签，出节点pop标签，标签为本地有效。&lt;/p&gt;
+&lt;p&gt;转发等价类FEC，按相同方式，经相同路径，每跳转发行为均一致的IP包。&lt;/p&gt;
+&lt;p&gt;LDP分发标签，在路由器内形成LIB表，与转发表FIB形成LFIB表，其中FIB表根据路由表RIB多次递归查询生成。LIB与RIB属于控制层面，FIB与LFIB属于转发层面。&lt;/p&gt;
+&lt;p&gt;PHP倒数第二条弹出，最后一条分配隐含空标签，能够防止最后一跳二次查表（FIB表、LFIB表）。&lt;/p&gt;
+&lt;p&gt;AS内IBGP间使用MPLS能够解决BGP路由黑洞的同时，简化BGP拓扑、不引入其他域路由来减少Core内路由表。项、防止私网访问Core。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="MPLS" scheme="http://scope.pub/tags/MPLS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Edge浏览器扩展插件</title>
+    <link href="http://scope.pub/2017/02/20/EdgeExtension/"/>
+    <id>http://scope.pub/2017/02/20/EdgeExtension/</id>
+    <published>2017-02-20T11:08:15.000Z</published>
+    <updated>2019-03-02T09:19:08.784Z</updated>
+    
+    <summary type="html">
+    
+      第一次测试的相关笔记
+    
+    </summary>
+    
+    
+      <category term="Edge" scheme="http://scope.pub/tags/Edge/"/>
+    
+      <category term="Extension" scheme="http://scope.pub/tags/Extension/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SDN网络虚拟化</title>
+    <link href="http://scope.pub/2017/02/15/SDN_NV/"/>
+    <id>http://scope.pub/2017/02/15/SDN_NV/</id>
+    <published>2017-02-15T13:47:59.000Z</published>
+    <updated>2019-03-02T09:19:08.797Z</updated>
+    
+    <summary type="html">
+    
+      关于SDN网络虚拟化的一些资料的整理
+    
+    </summary>
+    
+    
+      <category term="SDN" scheme="http://scope.pub/tags/SDN/"/>
+    
+      <category term="OpenVirteX" scheme="http://scope.pub/tags/OpenVirteX/"/>
+    
+      <category term="VTN" scheme="http://scope.pub/tags/VTN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《未来边缘》记</title>
+    <link href="http://scope.pub/2017/01/08/edgeOfFuture/"/>
+    <id>http://scope.pub/2017/01/08/edgeOfFuture/</id>
+    <published>2017-01-08T09:45:17.000Z</published>
+    <updated>2019-03-02T09:19:08.811Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《未来边缘》是刘慈欣的一本科幻小说集其中包含：天使时代、命运、2018年4月1日、赡养上帝与微纪元五篇短片科幻小说。给我了五次神奇的思维旅行。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Science Fiction" scheme="http://scope.pub/tags/Science-Fiction/"/>
+    
+      <category term="Book Review" scheme="http://scope.pub/tags/Book-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Pages搭建相关笔记</title>
+    <link href="http://scope.pub/2017/01/07/testHexo/"/>
+    <id>http://scope.pub/2017/01/07/testHexo/</id>
+    <published>2017-01-07T11:47:59.000Z</published>
+    <updated>2019-03-02T09:19:08.840Z</updated>
+    
+    <summary type="html">
+    
+      第一次测试的相关笔记
+    
+    </summary>
+    
+    
+      <category term="Github" scheme="http://scope.pub/tags/Github/"/>
+    
+      <category term="OpenSuse" scheme="http://scope.pub/tags/OpenSuse/"/>
+    
+      <category term="Hexi" scheme="http://scope.pub/tags/Hexi/"/>
+    
+      <category term="notes" scheme="http://scope.pub/tags/notes/"/>
+    
+  </entry>
+  
+</feed>
