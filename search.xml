@@ -66,10 +66,34 @@
         <category>网络</category>
       </categories>
       <tags>
-        <tag>ONOS</tag>
         <tag>Docker</tag>
+        <tag>ONOS</tag>
         <tag>Mininet</tag>
         <tag>portainer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker网络搭建]]></title>
+    <url>%2F2017%2F11%2F29%2FDocker%E7%BD%91%E7%BB%9C%2F</url>
+    <content type="text"><![CDATA[创建网桥与查看123docker network create --driver bridge sdn_netdocker network create --driver bridge --subnet 172.25.0.0/16 sdn_net Docker默认创建的容器使用bridge网络，容器之间互通通过bridge；容器与主机或外网互通使用NAT方式。 查看当前docker网络： 1sudo docker network list 详细内容（bridge为list查出的网络名称）： 1sudo docker network inspect bridge 容器中使用网桥1docker run -tid --net=bridge,sdn_net --name docker_br1 ubuntu 运行容器： 1sudo docker exec -ti docker_br1 /bin/bash 容器中添加网卡获得容器进程号并设置namespace的网络 12nspid=$(docker inspect -f '&#123;&#123;.State.Pid&#125;&#125;' testns)ln -s /proc/$&#123;nspid&#125;/ns/net /var/run/netns/$&#123;nspid&#125; 添加link： 1Ip link add veth1 type veth peer name veth2 添加端口容器： 12345ip link set dev tt0 name eth1 netns $&#123;nspid&#125;ip netns exec $&#123;nspid&#125; ip link set dev eth1 upip netns exec $&#123;nspid&#125; ip addr add 10.65.120.48/16 dev eth1ip netns exec $&#123;nspid&#125; ip addr add 10.65.120.49/16 label eth1:1 deveth1 容器中安装网络工具123apt-get update #更新软件源apt-get install net-tools #安装ifconfigapt-get install iputils-ping #安装ping 运行容器1docker exec -ti docker_br1 /bin/bash]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Quagga的安装与配置]]></title>
+    <url>%2F2017%2F11%2F29%2FQuagga%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[Quagga的安装与配置 安装Quagga 1apt-get install quagga #安装Quagga 复制zebra配置文件,若需要同样复制RIP、OSPF或BGP等配置文件 1cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conffa 删除zebra.conf最后的log注释，方便根据日志查看错误 运行zebra 1/usr/lib/quagga/zebra -d *注：在Docker中运行zebra会出现：zebraprivs_init: initial cap_set_proc failed，需要在创建容器时添加–privileged，如下： 1docker run -ti --privileged --name docker_br1 ubuntu ##登陆zebra 1telnet localhost 2601 各协议端口如下表 程序 端口/协议 说明 zebra 2601/tcp zebra vty ripd 2602/tcp RIPd vty ripngd 2603/tcp RIPngd vty ospfd 2604/tcp OSPFd vty bgpd 2605/tcp BGPd vty ospf6d 2606/tcp OSPF6d vty ospfapi 2607/tcp ospfapi isid 2608/tcp ISISd vty OSPF协议进入配置模式并进入OSPF配置 12config terminalroute ospf 配置OSPF的进程route id，并配置、起用网络6.6.6.0/24在area1中 12router-id 7.7.7.7network 6.6.6.95/24 area 1]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Quagga</tag>
       </tags>
   </entry>
   <entry>

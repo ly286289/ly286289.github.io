@@ -145,13 +145,57 @@
       <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="ONOS" scheme="http://scope.pub/tags/ONOS/"/>
-    
       <category term="Docker" scheme="http://scope.pub/tags/Docker/"/>
+    
+      <category term="ONOS" scheme="http://scope.pub/tags/ONOS/"/>
     
       <category term="Mininet" scheme="http://scope.pub/tags/Mininet/"/>
     
       <category term="portainer" scheme="http://scope.pub/tags/portainer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker网络搭建</title>
+    <link href="http://scope.pub/2017/11/29/Docker%E7%BD%91%E7%BB%9C/"/>
+    <id>http://scope.pub/2017/11/29/Docker网络/</id>
+    <published>2017-11-29T11:08:15.000Z</published>
+    <updated>2019-03-17T10:12:36.733Z</updated>
+    
+    <summary type="html">
+    
+      网络命名空间
+    
+    </summary>
+    
+      <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="Docker" scheme="http://scope.pub/tags/Docker/"/>
+    
+      <category term="Network" scheme="http://scope.pub/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Quagga的安装与配置</title>
+    <link href="http://scope.pub/2017/11/29/Quagga%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://scope.pub/2017/11/29/Quagga的安装与配置/</id>
+    <published>2017-11-29T11:08:15.000Z</published>
+    <updated>2019-03-17T10:13:38.623Z</updated>
+    
+    <summary type="html">
+    
+      虚拟路由器
+    
+    </summary>
+    
+      <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="Network" scheme="http://scope.pub/tags/Network/"/>
+    
+      <category term="Quagga" scheme="http://scope.pub/tags/Quagga/"/>
     
   </entry>
   
