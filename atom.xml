@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://scope.pub/"/>
-  <updated>2020-06-07T09:53:44.003Z</updated>
+  <updated>2020-06-07T10:05:16.614Z</updated>
   <id>http://scope.pub/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>观后感</title>
+    <link href="http://scope.pub/2020/06/07/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
+    <id>http://scope.pub/2020/06/07/观后感/</id>
+    <published>2020-06-07T11:47:59.000Z</published>
+    <updated>2020-06-07T10:05:16.614Z</updated>
+    
+    <summary type="html">
+    
+      读书笔记
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://scope.pub/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Book Review" scheme="http://scope.pub/tags/Book-Review/"/>
+    
+      <category term="notes" scheme="http://scope.pub/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式</title>
     <link href="http://scope.pub/2020/06/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://scope.pub/2020/06/07/设计模式/</id>
     <published>2020-06-07T11:47:59.000Z</published>
-    <updated>2020-06-07T09:53:44.003Z</updated>
+    <updated>2020-06-07T10:05:43.563Z</updated>
     
     <summary type="html">
     
@@ -35,28 +57,6 @@
       <category term="notes" scheme="http://scope.pub/tags/notes/"/>
     
       <category term="design mode" scheme="http://scope.pub/tags/design-mode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ONOS-2.2</title>
-    <link href="http://scope.pub/2020/06/07/%E6%9C%80%E6%96%B0ONOS/"/>
-    <id>http://scope.pub/2020/06/07/最新ONOS/</id>
-    <published>2020-06-07T11:47:59.000Z</published>
-    <updated>2020-06-07T09:54:26.963Z</updated>
-    
-    <summary type="html">
-    
-      ONOS-2.2
-    
-    </summary>
-    
-      <category term="ONOS-2.2" scheme="http://scope.pub/categories/ONOS-2-2/"/>
-    
-    
-      <category term="notes" scheme="http://scope.pub/tags/notes/"/>
-    
-      <category term="ONOS" scheme="http://scope.pub/tags/ONOS/"/>
     
   </entry>
   
@@ -76,31 +76,31 @@
       <category term="Arch" scheme="http://scope.pub/categories/Arch/"/>
     
     
-      <category term="Arch" scheme="http://scope.pub/tags/Arch/"/>
-    
       <category term="notes" scheme="http://scope.pub/tags/notes/"/>
+    
+      <category term="Arch" scheme="http://scope.pub/tags/Arch/"/>
     
   </entry>
   
   <entry>
-    <title>观后感</title>
-    <link href="http://scope.pub/2020/06/07/%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-    <id>http://scope.pub/2020/06/07/观后感/</id>
+    <title>ONOS-2.2</title>
+    <link href="http://scope.pub/2020/06/07/%E6%9C%80%E6%96%B0ONOS/"/>
+    <id>http://scope.pub/2020/06/07/最新ONOS/</id>
     <published>2020-06-07T11:47:59.000Z</published>
-    <updated>2020-06-07T09:52:58.047Z</updated>
+    <updated>2020-06-07T10:03:16.765Z</updated>
     
     <summary type="html">
     
-      读书笔记
+      ONOS-2.2
     
     </summary>
     
-      <category term="读书笔记" scheme="http://scope.pub/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="ONOS-2.2" scheme="http://scope.pub/categories/ONOS-2-2/"/>
     
     
       <category term="notes" scheme="http://scope.pub/tags/notes/"/>
     
-      <category term="Book Review" scheme="http://scope.pub/tags/Book-Review/"/>
+      <category term="ONOS" scheme="http://scope.pub/tags/ONOS/"/>
     
   </entry>
   
@@ -123,43 +123,6 @@
       <category term="notes" scheme="http://scope.pub/tags/notes/"/>
     
       <category term="python" scheme="http://scope.pub/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://scope.pub/2020/06/07/docker%E7%AE%A1%E7%90%86/"/>
-    <id>http://scope.pub/2020/06/07/docker管理/</id>
-    <published>2020-06-07T09:54:58.227Z</published>
-    <updated>2020-06-07T09:54:58.227Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://scope.pub/2019/09/09/onos-multicast/"/>
-    <id>http://scope.pub/2019/09/09/onos-multicast/</id>
-    <published>2019-09-09T15:46:39.291Z</published>
-    <updated>2019-09-09T15:46:39.291Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;ONOS组播&quot;&gt;&lt;a href=&quot;#ONOS组播&quot; class=&quot;headerlink&quot; title=&quot;ONOS组播&quot;&gt;&lt;/a&gt;ONOS组播&lt;/h1&gt;&lt;p&gt;起用mcast,mfwd应用，使用命令：&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -224,9 +187,9 @@
       <category term="编程" scheme="http://scope.pub/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="NIO" scheme="http://scope.pub/tags/NIO/"/>
-    
       <category term="Netty" scheme="http://scope.pub/tags/Netty/"/>
+    
+      <category term="NIO" scheme="http://scope.pub/tags/NIO/"/>
     
   </entry>
   
@@ -277,15 +240,15 @@
   </entry>
   
   <entry>
-    <title>ONOS容器集群环境搭建</title>
+    <title>ONOS容器集群、组播环境搭建</title>
     <link href="http://scope.pub/2018/05/04/onos-cluster/"/>
     <id>http://scope.pub/2018/05/04/onos-cluster/</id>
     <published>2018-05-04T11:47:59.000Z</published>
-    <updated>2019-09-09T15:45:42.758Z</updated>
+    <updated>2020-06-07T10:05:00.720Z</updated>
     
     <summary type="html">
     
-      通过docker搭建ONOS集群环境
+      通过docker搭建ONOS集群、组播环境
     
     </summary>
     
@@ -318,9 +281,9 @@
       <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Network" scheme="http://scope.pub/tags/Network/"/>
-    
       <category term="Docker" scheme="http://scope.pub/tags/Docker/"/>
+    
+      <category term="Network" scheme="http://scope.pub/tags/Network/"/>
     
   </entry>
   
@@ -340,9 +303,9 @@
       <category term="网络" scheme="http://scope.pub/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="Quagga" scheme="http://scope.pub/tags/Quagga/"/>
-    
       <category term="Network" scheme="http://scope.pub/tags/Network/"/>
+    
+      <category term="Quagga" scheme="http://scope.pub/tags/Quagga/"/>
     
   </entry>
   
