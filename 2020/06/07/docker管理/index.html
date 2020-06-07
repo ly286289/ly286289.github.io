@@ -111,17 +111,17 @@
 
 
 
-  <meta name="description" content="网络配置   Deprecated command Replacement commands     arp ip neighbor   ifconfig ip address, ip link   netstat ss   route ip route    As a result the system resolves to both entries: 1234$ getent hosts12">
+  <meta name="description" content="Network and Program">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cleanse Blog">
-<meta property="og:url" content="http://scope.pub/2020/05/05/Arch/index.html">
+<meta property="og:url" content="http://scope.pub/2020/06/07/docker管理/index.html">
 <meta property="og:site_name" content="Cleanse Blog">
-<meta property="og:description" content="网络配置   Deprecated command Replacement commands     arp ip neighbor   ifconfig ip address, ip link   netstat ss   route ip route    As a result the system resolves to both entries: 1234$ getent hosts12">
+<meta property="og:description" content="Network and Program">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-05T07:47:26.148Z">
+<meta property="og:updated_time" content="2020-06-07T09:54:58.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cleanse Blog">
-<meta name="twitter:description" content="网络配置   Deprecated command Replacement commands     arp ip neighbor   ifconfig ip address, ip link   netstat ss   route ip route    As a result the system resolves to both entries: 1234$ getent hosts12">
+<meta name="twitter:description" content="Network and Program">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://scope.pub/2020/05/05/Arch/">
+  <link rel="canonical" href="http://scope.pub/2020/06/07/docker管理/">
 
 
 
@@ -382,7 +382,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://scope.pub/2020/05/05/Arch/">
+    <link itemprop="mainEntityOfPage" href="http://scope.pub/2020/06/07/docker管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yang Lou">
@@ -425,7 +425,7 @@
                 
               
 
-              <time title="创建时间：2020-05-05 15:47:26" itemprop="dateCreated datePublished" datetime="2020-05-05T15:47:26+08:00">2020-05-05</time>
+              <time title="创建时间：2020-06-07 17:54:58" itemprop="dateCreated datePublished" datetime="2020-06-07T17:54:58+08:00">2020-06-07</time>
             
 
             
@@ -467,57 +467,7 @@
       
 
       
-        <h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">Deprecated command</th>
-<th style="text-align:center">Replacement commands</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">arp</td>
-<td style="text-align:center">ip neighbor</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://en.wikipedia.org/wiki/ifconfig" target="_blank" rel="noopener">ifconfig</a></td>
-<td style="text-align:center">ip address, ip link</td>
-</tr>
-<tr>
-<td style="text-align:center">netstat</td>
-<td style="text-align:center"><a href="https://wiki.archlinux.org/index.php/Network_configuration#Investigate_sockets" target="_blank" rel="noopener">ss</a></td>
-</tr>
-<tr>
-<td style="text-align:center">route</td>
-<td style="text-align:center">ip route</td>
-</tr>
-</tbody>
-</table>
-<p>As a result the system resolves to both entries:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> getent hosts</span></span><br><span class="line">127.0.0.1       localhost</span><br><span class="line">127.0.0.1       localhost</span><br><span class="line">127.0.1.1       myhostname.localdomain myhostname</span><br></pre></td></tr></table></figure>
-<p>To manually set an alias, for some NIC, use <a href="https://www.archlinux.org/packages/?name=iproute2" target="_blank" rel="noopener">iproute2</a> to execute</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ip addr add 192.168.2.101/24 dev eth0 label eth0:1</span></span><br></pre></td></tr></table></figure>
-<p>To remove a given alias execute</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ip addr del 192.168.2.101/24 dev eth0:1</span></span><br></pre></td></tr></table></figure>
-<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><p>To install a single package or list of packages, including dependencies, issue the following command:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> pacman -S package_name1 package_name2 ...</span></span><br></pre></td></tr></table></figure>
-<p>To remove a single package, leaving all of its dependencies installed:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> pacman -R package_name</span></span><br></pre></td></tr></table></figure>
-<h3 id="GRUB"><a href="#GRUB" class="headerlink" title="GRUB"></a>GRUB</h3><p>Use the <em>grub-mkconfig</em> tool to generate <code>/boot/grub/grub.cfg</code>:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> grub-mkconfig -o /boot/grub/grub.cfg</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://wiki.archlinux.org/index.php/Install" target="_blank" rel="noopener">Install</a> the <a href="https://www.archlinux.org/packages/?name=grub" target="_blank" rel="noopener">grub</a> package. (BISO) Then do:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># grub-install --target=i386-pc /dev/sdX</span><br></pre></td></tr></table></figure>
-<h3 id="dhcpcd"><a href="#dhcpcd" class="headerlink" title="dhcpcd"></a>dhcpcd</h3><p>To start the daemon for <em>all</em> network interfaces, <a href="https://wiki.archlinux.org/index.php/Start/enable" target="_blank" rel="noopener">start/enable</a> <code>dhcpcd.service</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpcd ens33 #使能接口dhcp</span><br></pre></td></tr></table></figure>
-<h3 id="deepin"><a href="#deepin" class="headerlink" title="deepin"></a>deepin</h3><p>安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S deepin</span><br></pre></td></tr></table></figure>
-<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p>编辑/etc/crontab，23点通过root权限运行/sbin/shutdown -h now</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00 23   * * *   root    /sbin/shutdown -h now</span><br></pre></td></tr></table></figure>
-<p>登录不上显示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System is booting up. Unprivileged users are not permitted to log in yet. Please come back later. For technical details, see pam_nologin(8).</span><br></pre></td></tr></table></figure>
-<p>，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /run/nologin</span><br></pre></td></tr></table></figure>
-
+        
       
     </div>
 
@@ -567,7 +517,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/05/docker管理/" rel="next" title>
+              <a href="/2019/09/09/onos-multicast/" rel="next" title>
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -577,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/07/广播/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/07/python/" rel="prev" title="PYTHON的一些笔记">
+                PYTHON的一些笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,17 +577,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -654,7 +595,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -677,7 +618,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -738,7 +689,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -770,23 +727,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络配置"><span class="nav-number">1.</span> <span class="nav-text">网络配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包管理"><span class="nav-number">2.</span> <span class="nav-text">包管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GRUB"><span class="nav-number">3.</span> <span class="nav-text">GRUB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dhcpcd"><span class="nav-number">4.</span> <span class="nav-text">dhcpcd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepin"><span class="nav-number">5.</span> <span class="nav-text">deepin</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#定时任务"><span class="nav-number"></span> <span class="nav-text">定时任务</span></a></li></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
